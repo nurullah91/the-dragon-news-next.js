@@ -1,10 +1,31 @@
-import React from 'react';
+import React from "react";
+import {
+  Box,
+  Card,
+  CardActionArea,
+  CardContent,
+  CardMedia,
+  Grid,
+  Typography,
+} from "@mui/material";
+import topNews from "@/assets/top-news.png";
+import Image from "next/image";
+import LatestNews from "@/components/ui/LatestNews/LatestNews";
+import SideBarNews from "@/components/ui/SideBarNews/SideBarNews";
 
 const HomePage = () => {
   return (
-    <div>
-      <h2 className="text-2xl text-center mt-4">Welcome to dragon news</h2>
-    </div>
+    <Box>
+      <Grid container spacing={2}>
+        <Grid item xs={8}>
+          <LatestNews />
+        </Grid>
+        
+        <Grid item xs={4}>
+          <SideBarNews />
+        </Grid>
+      </Grid>
+    </Box>
   );
 };
 
