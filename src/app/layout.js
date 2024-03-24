@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import NavBar from "@/components/shared/NabBar";
+import NavBar from "@/components/shared/NavBar";
 import { Container } from "@mui/material";
 import Footer from "@/components/shared/Footer";
 

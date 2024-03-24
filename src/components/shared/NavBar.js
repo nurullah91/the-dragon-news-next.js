@@ -33,7 +33,7 @@ const navItems = [
   },
   {
     route: "Category",
-    pathName: "/categories/news",
+    pathName: "/categories/news?category=all-news",
   },
   {
     route: "News",
@@ -52,14 +52,16 @@ function NavBar() {
   return (
     <>
       <Header />
-      <AppBar position="static" className="bg-black">
+      <AppBar position="static" sx={{ backgroundColor: "black" }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <Image src={logo} alt="Logo" width={100} height={100} />
+            <Link href="/">
+              <Image src={logo} alt="Logo" width={100} height={100} />
+            </Link>
             <Box className="w-full text-center">
               {navItems.map((item) => (
                 <Link key={item} href={item.pathName}>
-                  <Button className="text-white">{item.route}</Button>
+                  <Button sx={{ color: "white" }}>{item.route}</Button>
                 </Link>
               ))}
             </Box>
