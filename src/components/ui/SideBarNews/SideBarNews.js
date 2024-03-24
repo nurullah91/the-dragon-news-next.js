@@ -1,7 +1,9 @@
-import { Box, Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
+import { Box, Card, CardActionArea, CardContent, CardMedia, Divider, Typography } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
 import sideTopNews from '@/assets/side-top-news.png'
+import sideBottomNews from '@/assets/side-bottom-img.png'
+import SideBarNewsCard from './SideBarNewsCard';
 const SideBarNews = () => {
     return (
         <Box>
@@ -24,7 +26,21 @@ const SideBarNews = () => {
           </CardContent>
         </CardActionArea>
       </Card>
-            
+      <Divider sx={{ mt: 1, mb: 2 }} />
+      <SideBarNewsCard/>
+      <SideBarNewsCard/>
+      <SideBarNewsCard/>
+      <SideBarNewsCard/>
+      <SideBarNewsCard/>
+      <SideBarNewsCard/>
+      <Box>
+        <Image
+          src={sideBottomNews}
+          height={400}
+          width={350}
+          alt="rectangle world image"
+        />
+      </Box>
         </Box>
     );
 };
