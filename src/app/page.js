@@ -17,11 +17,11 @@ const HomePage = () => {
   return (
     <Box>
       <Grid container spacing={2}>
-        <Grid item xs={8}>
+        <Grid item md={8} xs={12}>
           <LatestNews />
         </Grid>
         
-        <Grid item xs={4}>
+        <Grid item md={4} xs={12}>
           <SideBarNews />
         </Grid>
       </Grid>

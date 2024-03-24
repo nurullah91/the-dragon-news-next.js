@@ -28,12 +28,12 @@ const navItems = [
     pathName: "/",
   },
   {
-    route: "Pages",
-    pathName: "/pages",
-  },
-  {
     route: "Category",
     pathName: "/categories/news?category=all-news",
+  },
+  {
+    route: "Pages",
+    pathName: "/pages",
   },
   {
     route: "News",
@@ -56,7 +56,14 @@ function NavBar() {
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Link href="/">
-              <Image src={logo} alt="Logo" width={100} height={100} />
+              <Image
+                src={logo}
+                alt="Logo"
+                width={100}
+                height={100}
+                blurDataURL="https://i.ibb.co/0cff2XW/3704115-1.jpg"
+                placeholder="blur"
+              />
             </Link>
             <Box className="w-full text-center">
               {navItems.map((item) => (
@@ -65,13 +72,17 @@ function NavBar() {
                 </Link>
               ))}
             </Box>
-            <Box>
+            <Box sx={{display:{
+                    xs:"none",
+                    md:"block"
+                  }}}>
               <Stack
                 direction="row"
                 sx={{
                   "& svg": {
                     color: "white",
                   },
+                  
                 }}
               >
                 <IconButton>

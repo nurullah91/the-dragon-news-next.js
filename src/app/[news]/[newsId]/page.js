@@ -16,6 +16,8 @@ const SingleNews = async ({ params }) => {
               width={800}
               height={500}
               alt="Thumbnail"
+              blurDataURL="https://i.ibb.co/0cff2XW/3704115-1.jpg"
+              placeholder="blur"
             />
 
             <Grid container spacing={2} className="mt-2">
@@ -25,6 +27,8 @@ const SingleNews = async ({ params }) => {
                   width={800}
                   height={500}
                   alt="news"
+                  blurDataURL="https://i.ibb.co/0cff2XW/3704115-1.jpg"
+                  placeholder="blur"
                 />
               </Grid>
               <Grid item lg={6}>
@@ -33,6 +37,8 @@ const SingleNews = async ({ params }) => {
                   width={800}
                   height={500}
                   alt="news"
+                  blurDataURL="https://i.ibb.co/0cff2XW/3704115-1.jpg"
+                  placeholder="blur"
                 />
               </Grid>
             </Grid>
@@ -45,7 +51,7 @@ const SingleNews = async ({ params }) => {
               sx={{
                 display: "flex",
                 alignItems: "center",
-                gap: 3
+                gap: 3,
               }}
             >
               <Avatar alt="Author" src={news.author.img} />
@@ -57,17 +63,16 @@ const SingleNews = async ({ params }) => {
                 textAlign: "justify",
                 whiteSpace: "pre-line",
                 margin: "20px 0px",
-                color:"gray"
+                color: "gray",
               }}
             >
               {news.details}
             </Typography>
             <Typography variant="h5">
-                ``Many desktop publishing packages and web pages editors now use as their default Model text!
+              ``Many desktop publishing packages and web pages editors now use
+              as their default Model text!
             </Typography>
-            <Typography variant="h6">
-              _Md Nurullah Bhuiyan
-            </Typography>
+            <Typography variant="h6">_Md Nurullah Bhuiyan</Typography>
           </Grid>
         </Grid>
       </Container>

@@ -6,11 +6,11 @@ const layout = ({ children }) => {
   return (
     <Box>
       <Grid container spacing={2}>
-        <Grid item xs={3}>
+        <Grid item md={3} xs={8}>
          <CategoryList/>
         </Grid>
 
-        <Grid item xs={9}>
+        <Grid item md={9} xs={12}>
          {children}
         </Grid>
       </Grid>

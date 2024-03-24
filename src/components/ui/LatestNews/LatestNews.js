@@ -27,6 +27,8 @@ const LatestNews = async () => {
                 height={500}
                 src={thumbnail_url}
                 alt="Thumbnail"
+                blurDataURL="https://i.ibb.co/0cff2XW/3704115-1.jpg"
+                placeholder="blur"
               />
             </CardMedia>
             <CardContent>
@@ -51,47 +53,54 @@ const LatestNews = async () => {
       </Link>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         {homePageNews.map((news) => (
-          
-            <Grid key={news.id} item lg={6}>
-              <Card className="w-full my-5">
-                <CardActionArea>
-                  <CardMedia
-                    sx={{
-                      "& img": {
-                        width: "100%",
-                        height: "250px",
-                      },
-                    }}
-                  >
-                    <Image
-                      width={800}
-                      height={500}
-                      src={news.thumbnail_url}
-                      alt="Thumbnail"
-                    />
-                  </CardMedia>
-                  <CardContent>
-                    <Typography variant="h5" gutterBottom className="my-3">
-                      {title.length > 30 ? title.slice(0, 30) + "..." : title}
-                    </Typography>
-                    <span className="w-[100px] bg-red-500 px-2 text-white my-5 rounded">
-                      {news.category}
-                    </span>
-                    <Typography gutterBottom className="my-3">
-                      By_<span className="font-bold">{news.author.name}</span> _
-                      {news.author.published_date}
-                    </Typography>
+          <Grid key={news.id} item lg={6}>
+            <Card className="w-full my-5">
+              <CardActionArea>
+                <CardMedia
+                  sx={{
+                    "& img": {
+                      width: "100%",
+                      height: "250px",
+                    },
+                  }}
+                >
+                  <Image
+                    width={800}
+                    height={500}
+                    src={news.thumbnail_url}
+                    alt="Thumbnail"
+                    blurDataURL="https://i.ibb.co/0cff2XW/3704115-1.jpg"
+                    placeholder="blur"
+                  />
+                </CardMedia>
+                <CardContent>
+                  <Typography variant="h5" gutterBottom className="my-3">
+                    {title.length > 30 ? title.slice(0, 30) + "..." : title}
+                  </Typography>
+                  <span className="w-[100px] bg-red-500 px-2 text-white my-5 rounded">
+                    {news.category}
+                  </span>
+                  <Typography gutterBottom className="my-3">
+                    By_<span className="font-bold">{news.author.name}</span> _
+                    {news.author.published_date}
+                  </Typography>
 
-                    <Typography variant="body2" color="text.secondary">
-                      {news.details?.length > 200
-                        ? news.details.slice(0, 200) + "..."
-                        : news.details} <Link className="text-blue-500" key={news.id} href={`/${news.category.toLowerCase()}/${news._id}`}>Read more</Link>
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            </Grid>
-       
+                  <Typography variant="body2" color="text.secondary">
+                    {news.details?.length > 200
+                      ? news.details.slice(0, 200) + "..."
+                      : news.details}{" "}
+                    <Link
+                      className="text-blue-500"
+                      key={news.id}
+                      href={`/${news.category.toLowerCase()}/${news._id}`}
+                    >
+                      Read more
+                    </Link>
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+          </Grid>
         ))}
       </Grid>
     </Box>
